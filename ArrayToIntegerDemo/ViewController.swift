@@ -18,6 +18,11 @@ class ViewController: UIViewController {
     
     private var viewModel = ViewModel()
     weak var delegate: ViewModelDelegate?
+    private var labelContent: String = "" {
+        didSet {
+            updateLabelText(with: labelContent)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +38,15 @@ class ViewController: UIViewController {
     private func transformInput(with string: String) {
         viewModel.arrayToInteger(input: string)
     }
+    
+    private func updateLabelText(with content: String) {
+        outputResultLabel.text = labelContent
+    }
 }
 
 extension ViewController: ViewModelDelegate {
     func viewModel(_ viewModel: ViewModel) {
-        outputResultLabel.text = viewModel.model.outputString
+        labelContent = viewModel.model.outputString
     }
 }
 
