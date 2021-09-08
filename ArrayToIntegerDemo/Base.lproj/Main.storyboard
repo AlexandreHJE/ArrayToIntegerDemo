@@ -1,24 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ArrayToIntgerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Input String to ATOI :)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TZr-PP-rrd">
+                                <rect key="frame" x="87" y="194" width="240" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="c7t-BB-FGS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="wk6-cq-lVy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input String Here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vz-mu-R2p">
+                                <rect key="frame" x="136" y="152" width="142" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output String Here (from Int):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz6-xZ-1CU">
+                                <rect key="frame" x="88.5" y="286" width="237" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Result&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydB-rE-LPH">
+                                <rect key="frame" x="107" y="328" width="200" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="CXP-EV-2HQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8T-d7-Vhz">
+                                <rect key="frame" x="177.5" y="394" width="59" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wz6-xZ-1CU" firstAttribute="top" secondItem="TZr-PP-rrd" secondAttribute="bottom" constant="50" id="60d-J0-Y2F"/>
+                            <constraint firstItem="H8T-d7-Vhz" firstAttribute="top" secondItem="ydB-rE-LPH" secondAttribute="bottom" constant="30" id="NXf-jg-6g0"/>
+                            <constraint firstItem="TZr-PP-rrd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="WHG-eq-JcV"/>
+                            <constraint firstItem="5Vz-mu-R2p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zlc-Ke-a00"/>
+                            <constraint firstItem="ydB-rE-LPH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dsr-Ih-aiV"/>
+                            <constraint firstItem="TZr-PP-rrd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eQC-F0-cBJ"/>
+                            <constraint firstItem="TZr-PP-rrd" firstAttribute="top" secondItem="5Vz-mu-R2p" secondAttribute="bottom" constant="20" id="liC-4F-61J"/>
+                            <constraint firstItem="ydB-rE-LPH" firstAttribute="top" secondItem="Wz6-xZ-1CU" secondAttribute="bottom" constant="20" id="teL-jy-5fB"/>
+                            <constraint firstItem="H8T-d7-Vhz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ymB-V0-wFT"/>
+                            <constraint firstItem="Wz6-xZ-1CU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zYY-CU-8EA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="TZr-PP-rrd" id="ULg-tN-EbK"/>
+                        <outlet property="outputResultLabel" destination="ydB-rE-LPH" id="CWE-VG-Vbd"/>
+                        <outlet property="submitButton" destination="H8T-d7-Vhz" id="J79-0e-XTZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-30" y="89"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
